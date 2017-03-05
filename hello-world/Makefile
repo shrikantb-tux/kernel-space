@@ -1,4 +1,4 @@
-obj-m+= hello-world-01.o
+obj-m := hello-world-01.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) modules
