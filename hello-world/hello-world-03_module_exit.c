@@ -18,18 +18,3 @@ module_exit(hello_world_03_exit);
 MODULE_AUTHOR("Shrikant");
 MODULE_DESCRIPTION("Hello World: Only Exit, init explicitly skipped");
 MODULE_LICENSE("GPL");
-
-# if 0
-This is quick section gives real o/p inserting and removing the simple module
-o/p
-Mar  5 23:18:31 shrikant-VirtualBox kernel: [ 4333.071395] hello_world_03_module_exit: module license 'unspecified' taints kernel.
-Mar  5 23:18:31 shrikant-VirtualBox kernel: [ 4333.071398] Disabling lock debugging due to kernel taint
-
-after adding lic:
-
-as no init functuion available so no notifiation in logs/dmesg
-only available way to check via lsmod as below..
-
-lsmod | grep hello 
-hello_world_03_module_exit    16384  0
-#endif
