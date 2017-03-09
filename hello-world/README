@@ -2,3 +2,11 @@ hello-world-01.c						# := first initialization
 hello-world-02_module_init.c   			# += adding the modules further, point to note: whole menuconfig works on this obj-$(CONFIG_FOO)
 obj-m += hello-world-03_module_exit.c   # where FOO_CONFIG will be either n=disabled y=enabled/builtin kernel image m=module,
                                         # config dependency chain maintained by Kconfig: dependency & details at menuconfig.
+
+
+hello-world-02-and-03.c		# combine two c files together and form only one module, init and exit from diff. source file
+hello-world-02_module_init.c  & hello-world-03_module_exit.c
+
+
+hello-world-04-a.c				# init function data (variables and functions) which are not using again in module can be
+hello-world-04-b.c				# marked with __init & __initdata to save the memory space.
