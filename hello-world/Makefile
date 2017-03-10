@@ -12,6 +12,10 @@ obj-m := hello-world-04-a.o				# init function data (variables and functions) wh
 obj-m += hello-world-04-b.o				# marked with __init & __initdata to save the memory space.
 
 
+obj-m := hello-world-05-export-symbol.o
+obj-m += hello-world-05-use-symbol.o
+
+
 all:
 	make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) modules
 
