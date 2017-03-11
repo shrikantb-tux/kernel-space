@@ -17,6 +17,8 @@ obj-m += hello-world-05-use-symbol.o
 
 obj-m := hello-world-06-param.o
 
+obj-m := hello-world-07-char-dev.o
+
 all:
 	make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) modules
 
